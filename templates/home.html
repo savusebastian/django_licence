@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Image recognition{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container upload">
+        <form class="" action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" id="image-file" name="photo" hidden/>
+            <button type="submit" name="button" id="submit-btn" hidden></button>
+        </form>
+
+        <button type="button" name="button" class="btn btn-primary btn-lg ml-2 mr-2" id="select-btn">Select Image</button>
+        <button type="button" name="button" class="btn btn-success btn-lg ml-2 mr-2" id="upload-btn">Upload</button>
+    </div>
+
+    <div class="container text">
+        <span id="custom-span">No file chosen</span>
+        <span id="custom-size">Size</span>
+    </div>
+
+    <div class="container">
+        <img class="image-upload" src="" />
+    </div>
+</main>
+{% endblock %}

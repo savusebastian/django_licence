@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Result{% endblock %}
+
+{% block content %}
+<main>
+    <div class="container-image">
+        <img src="../media/processed_images/{{ filename_processed }}" class="image-uploaded mb-4" />
+        <p>Name: {{ filename_processed }}</p>
+        <p>Duration: {{ time }} seconds</p>
+
+        <a href="../media/processed_images/{{ filename_processed }}" download>
+            <button type="button" name="button" class="btn btn-primary">Download</button>
+        </a>
+    </div>
+</main>
+{% endblock %}
